@@ -1,0 +1,41 @@
+http://10.225.1.247:9062/admin 控制台登录
+http://10.225.1.247:9062/IFRS9 应用地址
+WAS 远程调试 10.225.1.247:7779
+10.225.8.4 crmsput/crmsput 模板文件
+10.225.1.156 root/Mi@Dim7T 数据服务器
+10.225.1.247 root/Mi@Dim7T 应用服务器
+# su - oracle 切换至oracle用户
+# cat etc/passwd 查询所有用户
+# cd .. 上级目录
+# pwd 查询当前目录
+# ls 查询文件下所有目录和文件
+# tail -f filename 查阅正在修改的文件log（ctrl+C退出）
+# date 查看当前日期时间
+# echo $LANG 查看服务器编码
+# cat /proc/cpuinfo 查看cpu信息
+# cat /proc/meminfo |more 查看内存信息
+# dmesg |more 查看所有硬件信息
+# fdisk -l 查看硬盘信息
+# ./stopServer.sh server1 关闭server1 ./可换为sh
+# ./startServer.sh server1 启动server1
+/was/profiles/CRMS_IFRS/logs/server1 server1路径
+/home/CRMS_FILE/IFRS9/DataSupp/suppFile/M-001_表内批发债项信息_1_20170914.xls
+I9_war.ear/WEB-INF/classes/com/amarsoft/ifrs/action 更新单个文件
+I9_war.ear/WebContent/WEB-INF/classes/com/amarsoft/ifrs/action
+# ./stopServer.sh  server1 停止服务
+引擎目录：10.225.8.4 root/Mi@Dim7T
+cd /home/crmsput/IFRS9/Engine/
+sh engine.sh 2017101200000001 20170831 2017101600000002
+
+# echo $JAVA_HOME查看指定环境变量
+# env 查看所有环境变量
+# export home=/home/name 设置环境变量
+ctrl+c/z停止正在执行的shell命令
+nohup sh startEngineTask.sh &
+
+ps -ef | grep "startEngineTask.sh"查询后台处理程序
+
+jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.30.2)(PORT=1521))
+(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.30.3)(PORT=1521))(failover=yes))(CONNECT_DATA=(SERVICE_NAME=RPM)
+(FAILOVER_MODE=(TYPE=session)(METHOD=basic)(RETRIES=180)(DELAY=5))))
+
