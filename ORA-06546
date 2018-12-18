@@ -9,3 +9,5 @@ PLS-00103: Encountered the symbol " " when expecting one of the following:
 D: 这个语句会报错：
 "ORA-06546: DDL statement is executed in an illegal context". 
 你不可以在执行DDL语句的时候使用INTO子句。Oracle在执行这种语句的时候不会返回一个状态码。它要么执行不出错，要么会抛出错误，产生的PL/SQL异常会中止执行。
+
+http://www.itpub.net/thread-2084229-1-1.html
