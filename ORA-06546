@@ -1,0 +1,11 @@
+A: 这个语句会报错：
+"ORA-06546: DDL statement is executed in an illegal context". 
+在一个动态DDL语句中，你不能用占位符来通过USING子句绑定值。你只可以执行一个字符串，该字符串本身必须是有效的DDL语句。
+B: 这个选项用了EXECUTE IMMEDIATE来执行一个有效的DDL语句，该语句在schema级别创建了一个可变数组。
+C: 你当然可以把不同的文本串接成一个单独的语句来执行。然而，这么做需要注意一件事，你必须确定每个串之间有空白符。
+在这个例子中，我忘了确定第二和第三个串之间的空白符。结果这个选项会报错：
+
+PLS-00103: Encountered the symbol " " when expecting one of the following:
+D: 这个语句会报错：
+"ORA-06546: DDL statement is executed in an illegal context". 
+你不可以在执行DDL语句的时候使用INTO子句。Oracle在执行这种语句的时候不会返回一个状态码。它要么执行不出错，要么会抛出错误，产生的PL/SQL异常会中止执行。
