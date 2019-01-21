@@ -1,0 +1,3 @@
+1、开始，运行，调出运行对话框；
+
+2、在运行中输入如下的内容：reg add HKCU\Software\Microsoft\Office\12.0\Word\Options /v NoReReg /t REG_DWORD /d 1，回车即可解决问题。
